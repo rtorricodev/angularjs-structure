@@ -1,0 +1,68 @@
+<div ng-controller="ordersController">
+
+    <div class='section'>
+        <div class="container">
+            <h1 class="title center">Lista de ordenes</h1>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container right">
+            <button class="button is-primary" ng-click="redirectTo('/#!/create')">Crear</button>
+        </div>
+        <div class="container">
+            <button class="button" ng-click="showDraft()">Borrador</button>
+            <button class="button" ng-click="showRequested()">Solicitado</button>
+            <button class="button" ng-click="showFinished()">Finalizado</button>
+        </div>
+
+    </div>
+  
+    <div class="section">
+        <div class="container">
+            <table class="table" ng-model="draftOrders">
+                <tr ng-if="draft || requested || finished"class="is-selected">
+                    <th>cliente</th>
+                    <th>Fecha de solicitud</th>
+                    <th></th>
+                </tr>
+                <tr ng-if="draft" ng-repeat="order in draftOrders">
+                    <td>
+                        {{order.customer}}
+                    </td>
+                    <td>
+                        {{order.date}}
+                    </td>
+                </tr>
+
+                <tr ng-if="requested" ng-repeat="order in requestedOrders">
+                    <td>
+                        {{order.customer}}
+                    </td>
+                    <td>
+                        {{order.date}}
+                    </td>
+                    <td>
+           
+                            <i ng-click="viewOrder(order._id)" class="fa fa-eye" style="cursor:pointer"></i>
+               
+                    </td>
+                </tr>
+
+
+                <tr ng-if="finished" ng-repeat="order in finishedOrders">
+                    <td>
+                        {{order.customer}}
+                    </td>
+                    <td>
+                        {{order.date}}
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+
+    </div>
+
+    
+
+</div>

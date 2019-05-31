@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pruct manager</title>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- modules -->
+    <script src="app.module.js"></script>
+    <!-- router -->
+    <script src="router.js"></script>
+    <!-- controllers -->
+    <script src="./controllers/create-order.controller.js"></script>
+    <script src="./controllers/orders.controller.js"></script>
+    <script src="./controllers/view-order.controller.js"></script>
+    <!-- services -->
+    <script src="./services/products.service.js"></script>
+    <script src="./services/order.service.js"></script>
+    <!-- models -->
+    <script src="./models/Order.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <div>
+    <div ng-view></div>
+  </div>
+  
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<div ng-controller="viewOrderController">
+    <div class="section">
+        <div class="container">
+            <h1 class="title center">Pedido de {{order.customer}} </h1>
+        </div>
+
+        <div class="container right">
+            <button ng-click="redirectTo('/')" class="button ">Regresar</button>
+            <button ng-click="refresh()" class="button is-primary"> Actualizar</button>
+        </div>
+
+        <div class="container">
+            <label> <strong>Cliente: </strong> {{order.customer}}</label>
+        </div>
+        <div class="container">
+            <label><strong>Estado:</strong> {{order.status}}</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <th class="is-selected">Produtos</th>
+                </tr>
+                <tr ng-repeat="prodruct in order.products">
+                    <td >
+                        {{prodruct.name}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container right">
+            <label> Cantidad de productos: {{order.products.length}}</label>
+        </div>
+    </div>
+
+</div>
